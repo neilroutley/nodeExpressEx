@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tweet Search</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Neil Routley">
+	<meta name="description" content="web app to load tweets and then filter by user-name">
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<!-- main style sheet -->
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+	<!-- main container -->
+	<div class="container">
+
+		<!-- header -->
+		<div class="row">
+			<div class="col-12 text-center">
+				<h1>Tweet Search</h1>
+			</div>
+		</div>
+		
+		<!-- tweet search bar -->
+		<div class="input-group md-form form-sm form-2 pl-0">
+		  <input id="search" class="form-control my-0 py-1 lime-border" type="text" placeholder="Search a user-name" aria-label="Search">
+		  <div class="input-group-append">
+		  	<input  id="searchButton" type="button" value="Submit" onclick="searchTweets()"/>
+		  </div>
+		</div>
+
+		<!-- tweets -->
+		<div class="row" id="root">
+
+			<!-- JS will fill in all the tweets to this root div -->
+
+		</div>
+
+	</div>
+	
+
+	<!-- Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+	<!-- main JS file -->
+	<script src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/* main.css */
+body{
+	font-family: sans-serif;
+}
+
+.tweet {
+	margin: 40px;
+	border: solid 1px;
+	padding: 20px;
+	overflow: hidden;
+}
+
+div.user img {
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border-radius: 100%;
+	float: left;
+}
+
+.date {
+	color: gray;
+	padding-bottom: 10px;
+}
