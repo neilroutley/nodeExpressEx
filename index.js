@@ -28,12 +28,17 @@ function loadTweets(callback) {
 // and returns as json
 // to get only the tweets from specific users, query the api with ?q=user-name
 // where the user-name is the users twitter user-name
+// Note: now returns matches based on regex so you can short the name or just 
+// use one letter to get all the users with that first letter
 app.get("/api", function(req, res) {
     var user = req.query.q;
     loadTweets(function(tweets) {
         if (user){
             var filtered = tweets.filter(function(item){
-                return item.user.screen_name.toLowerCase() == user.toLowerCase();
+                var expression = "\\b" + user.toLowerCase() + ".*";
+                var regex = new RegExp(expression);
+                return regex.test(item.user.screen_name.toLowerCase());
+                // return item.user.screen_name.toLowerCase() == user.toLowerCase();
             });
             console.log("I loaded " + filtered.length + " tweets");
             res.send(filtered);
