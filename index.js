@@ -33,11 +33,13 @@ function loadTweets(callback) {
 app.get("/api", function(req, res) {
     var user = req.query.q;
     loadTweets(function(tweets) {
-        if (user){
+        var regexCheck = new RegExp('^[a-zA-Z0-9-_]+$');
+        if (user && regexCheck.test(user.toLowerCase())){
             var filtered = tweets.filter(function(item){
-                var expression = "\\b" + user.toLowerCase() + ".*";
-                var regex = new RegExp(expression);
-                return regex.test(item.user.screen_name.toLowerCase());
+            var expression = "\\b" + user.toLowerCase() + ".*";
+            var regex = new RegExp(expression);
+
+            return regex.test(item.user.screen_name.toLowerCase());
                 // return item.user.screen_name.toLowerCase() == user.toLowerCase();
             });
             console.log("I loaded " + filtered.length + " tweets");

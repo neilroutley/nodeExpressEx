@@ -76,7 +76,7 @@ function searchTweets(){
 			text.setAttribute("class", "text");
 			text.textContent = tweet.text;
 			tweetDiv.appendChild(text);
-	    });
+	    });	
 	  } else {
 	    	console.log('error');
 	  }
